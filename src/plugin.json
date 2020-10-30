@@ -1,19 +1,22 @@
 {
-  "name": "custom.remote.python.custom",
+  "name": "custom.remote.python.spacex_davidlopes",
   "version": "1.001",
-  "metricGroup": "tech.Custom",
+  "metricGroup": "tech.SpaceX.DavidLopes",
   "technologies": [
-    "Custom"
+    "SpaceX"
   ],
+  "favicon": "https://imgur.com/H0kgC2m.png",
   "type": "python",
   "entity": "CUSTOM_DEVICE",
   "source": {
-    "package": "basic_plugin",
-    "className": "BasicPlugin",
+    "package": "spacex_davidlopes",
+    "className": "SpaceXExtension",
     "install_requires": []
   },
   "properties": [],
   "configUI": {},
-  "metrics": [],
+  "metrics": [
+    {"timeseries":  { "key": "fuel", "unit": "Count", "displayname": "Combustivel" }}
+  ],
   "ui": {}
 }
