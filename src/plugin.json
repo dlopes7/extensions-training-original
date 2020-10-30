@@ -1,6 +1,6 @@
 {
   "name": "custom.remote.python.spacex_davidlopes",
-  "version": "1.005",
+  "version": "1.006",
   "metricGroup": "tech.SpaceX.DavidLopes",
   "technologies": [
     "SpaceX"
@@ -13,9 +13,14 @@
     "className": "SpaceXExtension",
     "install_requires": []
   },
-  "properties": [],
+  "properties": [
+    {"key":  "url", "type": "String"}
+  ],
   "configUI": {
-    "displayName": "SpaceX David Lopes"
+    "displayName": "SpaceX David Lopes",
+    "properties": [
+      {"key":  "url", "displayName":  "URL da API SpaceX", "displayHint":  "http://ec2-3-235-75-78.compute-1.amazonaws.com/v3/ships"}
+    ]
   },
   "metrics": [
     {"timeseries":       { "key": "fuel", "unit": "Count", "displayname": "Combustivel" }},
