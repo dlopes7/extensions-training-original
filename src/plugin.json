@@ -1,0 +1,19 @@
+{
+  "name": "custom.remote.python.custom",
+  "version": "1.001",
+  "metricGroup": "tech.Custom",
+  "technologies": [
+    "Custom"
+  ],
+  "type": "python",
+  "entity": "CUSTOM_DEVICE",
+  "source": {
+    "package": "basic_plugin",
+    "className": "BasicPlugin",
+    "install_requires": []
+  },
+  "properties": [],
+  "configUI": {},
+  "metrics": [],
+  "ui": {}
+}
