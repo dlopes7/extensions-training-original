@@ -1,6 +1,6 @@
 {
   "name": "custom.remote.python.spacex_davidlopes",
-  "version": "1.002",
+  "version": "1.003",
   "metricGroup": "tech.SpaceX.DavidLopes",
   "technologies": [
     "SpaceX"
@@ -21,5 +21,42 @@
     {"timeseries":  { "key": "fuel", "unit": "Count", "displayname": "Combustivel" }},
     {"timeseries":  { "key": "thrust", "unit": "Percent", "displayname": "Potencia", "dimensions": ["Engine"] }}
   ],
-  "ui": {}
+  "ui": {
+    "keymetrics": [
+      {"key":  "fuel", "displayName": "Combustivel"},
+      {"key":  "thrust", "displayName": "Potencia", "mergeaggregation": "AVG"}
+    ],
+    "keycharts": [
+      {
+        "group": "Desempenho",
+        "title": "Combustivel",
+        "series": [
+          {"key":  "fuel", "displayName": "Combustivel", "seriestype":  "bar", "color": "#5ead35"}
+        ]
+      },
+      {
+        "group": "Desempenho",
+        "title": "Potencia",
+        "series": [
+          {"key":  "thrust", "displayName": "Potencia", "mergeaggregation": "AVG"}
+        ]
+      }
+    ],
+    "charts": [
+      {
+        "group": "Desempenho",
+        "title": "Combustivel",
+        "series": [
+          {"key":  "fuel", "displayName": "Combustivel", "seriestype":  "bar", "color": "#5ead35"}
+        ]
+      },
+      {
+        "group": "Desempenho",
+        "title": "Potencia",
+        "series": [
+          {"key":  "thrust", "displayName": "Potencia"}
+        ]
+      }
+    ]
+  }
 }
