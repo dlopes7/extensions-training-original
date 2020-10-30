@@ -34,6 +34,11 @@ class SpaceXExtension(RemoteBasePlugin):
             for engine in ship["thrust"]:
                 device.absolute(key="thrust", value=engine["power"], dimensions={"Engine": engine["engine"]})
 
+            device.add_endpoint(ship["ship_ip"])
+
+            device.report_property("Home port", ship.get("home_port", ""))
+            device.report_property("Roles", ",".join(ship.get("roles", [])))
+
         # Criar os Custom Devices
         # Enviar a métrica Combustivel
 
