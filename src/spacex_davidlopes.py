@@ -31,6 +31,9 @@ class SpaceXExtension(RemoteBasePlugin):
             # Envia uma métrica absoluta
             device.absolute("fuel", ship["fuel"])
 
+            for engine in ship["thrust"]:
+                device.absolute(key="thrust", value=engine["power"], dimensions={"Engine": engine["engine"]})
+
         # Criar os Custom Devices
         # Enviar a métrica Combustivel
 

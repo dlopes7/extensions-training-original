@@ -1,6 +1,6 @@
 {
   "name": "custom.remote.python.spacex_davidlopes",
-  "version": "1.001",
+  "version": "1.002",
   "metricGroup": "tech.SpaceX.DavidLopes",
   "technologies": [
     "SpaceX"
@@ -14,9 +14,12 @@
     "install_requires": []
   },
   "properties": [],
-  "configUI": {},
+  "configUI": {
+    "displayName": "SpaceX David Lopes"
+  },
   "metrics": [
-    {"timeseries":  { "key": "fuel", "unit": "Count", "displayname": "Combustivel" }}
+    {"timeseries":  { "key": "fuel", "unit": "Count", "displayname": "Combustivel" }},
+    {"timeseries":  { "key": "thrust", "unit": "Percent", "displayname": "Potencia", "dimensions": ["Engine"] }}
   ],
   "ui": {}
 }
