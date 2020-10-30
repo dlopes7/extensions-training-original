@@ -1,6 +1,6 @@
 {
   "name": "custom.remote.python.spacex_davidlopes",
-  "version": "1.004",
+  "version": "1.005",
   "metricGroup": "tech.SpaceX.DavidLopes",
   "technologies": [
     "SpaceX"
@@ -18,8 +18,9 @@
     "displayName": "SpaceX David Lopes"
   },
   "metrics": [
-    {"timeseries":  { "key": "fuel", "unit": "Count", "displayname": "Combustivel" }},
-    {"timeseries":  { "key": "thrust", "unit": "Percent", "displayname": "Potencia", "dimensions": ["Engine"] }}
+    {"timeseries":       { "key": "fuel", "unit": "Count", "displayname": "Combustivel" }},
+    {"timeseries":       { "key": "thrust", "unit": "Percent", "displayname": "Potencia", "dimensions": ["Engine"] }},
+    {"statetimeseries":  { "key":  "weather", "states":  ["Fair", "Cloudy", "Sunny", "Rainy", "Stormy", "Snowy", "Windy", "Hail"], "displayname":  "Clima"}}
   ],
   "ui": {
     "keymetrics": [
@@ -40,6 +41,14 @@
         "series": [
           {"key":  "thrust", "displayName": "Potencia", "mergeaggregation": "AVG"}
         ]
+      },
+      {
+        "group": "Clima",
+        "title": "Clima",
+        "series": [
+          {"key":  "weather", "displayName":  "Clima", "statechart":  true,
+            "statecolors":  ["#ef651f", "#f5d30f", "#4fd5e0", "#4556d7", "#ffa86c", "#4556d7", "#ffa86c", "#4fd5e0"]}
+        ]
       }
     ],
     "charts": [
@@ -55,6 +64,14 @@
         "title": "Potencia",
         "series": [
           {"key":  "thrust", "displayName": "Potencia"}
+        ]
+      },
+      {
+        "group": "Clima",
+        "title": "Clima",
+        "series": [
+          {"key":  "weather", "displayName":  "Clima", "statechart":  true,
+            "statecolors":  ["#ef651f", "#f5d30f", "#4fd5e0", "#4556d7", "#ffa86c", "#4556d7", "#ffa86c", "#4fd5e0"]}
         ]
       }
     ]

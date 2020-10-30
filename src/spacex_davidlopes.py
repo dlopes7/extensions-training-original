@@ -31,18 +31,19 @@ class SpaceXExtension(RemoteBasePlugin):
             # Envia uma métrica absoluta
             device.absolute("fuel", ship["fuel"])
 
+            # Envia métrica com dimensão
             for engine in ship["thrust"]:
                 device.absolute(key="thrust", value=engine["power"], dimensions={"Engine": engine["engine"]})
 
+            # Adiciona informação de topologia
             device.add_endpoint(ship["ship_ip"])
 
+            # Propriedades
             device.report_property("Home port", ship.get("home_port", ""))
             device.report_property("Roles", ",".join(ship.get("roles", [])))
 
-        # Criar os Custom Devices
-        # Enviar a métrica Combustivel
+            device.state_metric("weather", ship["weather"])
 
-        pass
 
     def get_ships(self):
         return requests.get("http://ec2-3-235-75-78.compute-1.amazonaws.com/v3/ships").json()
